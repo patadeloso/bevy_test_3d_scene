@@ -2,6 +2,8 @@ use bevy::prelude::*;
 
 mod world;
 use world::*;
+mod player;
+use player::*;
 
 fn main() {
 	App::build()
@@ -17,6 +19,7 @@ fn main() {
 		.add_plugins(DefaultPlugins)
 		.add_startup_system(setup.system())
 		.add_startup_system(create_world.system())
+		.add_startup_system(create_player.system())
 		.run();
 }
 
